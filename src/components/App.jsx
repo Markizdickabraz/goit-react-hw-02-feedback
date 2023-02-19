@@ -8,12 +8,24 @@ class App extends Component{
           bad: 0
       };
       
-  btnClickGood = () =>{
-    this.setState(prevState => {return {
-      good: prevState.good + 1
+  // btnClick = (e) => {
+  //   if (e.target.nodeName !== 'BUTTON') {
+  //     return
+  //   }
+  //   console.dir(e.target);
+  //   this.setState(prevState => {
+  //     return {
+        
+  //     }
+  //   })
+  // }
+  
+  btnClickGood = () => {
+    this.setState(prevState => {
+      return {
+    good: prevState.good + 1 
     }
     })
-    
   }
   btnClickNeutral = () =>{
     this.setState(prevState => {
@@ -35,13 +47,13 @@ class App extends Component{
     const total = this.state.good + this.state.neutral + this.state.bad;
     return total;
   }
+
   countPositiveFeedbackPercentage = () => {
     let positive = 0;
     if (!this.state.good || !this.countTotalFeedback) {
       return;
     }
-    positive = Number.parseInt(this.state.good) / Number.parseInt(this.countTotalFeedback) * 100;
-    console.log(positive);
+    positive = Number(this.state.good) / Number(this.countTotalFeedback) * 100;
     return positive;
  }
     
@@ -50,9 +62,9 @@ class App extends Component{
             <div>
               <h1>Please leave feedback</h1>
               <ul className="list"> 
-                <li><button type='button' onClick={() => {this.btnClickGood()}}>good</button></li>
-                <li><button type='button' onClick={() => {this.btnClickNeutral()}}>neutral</button></li>
-                <li><button type='button' onClick={()=> {this.btnClickBad()}}>bad</button></li>
+                <li><button type='button' name='good' onClick={this.btnClickGood}>good</button></li>
+                <li><button type='button' name= 'neutral' onClick={this.btnClickNeutral}>neutral</button></li>
+                <li><button type='button' name='bad' onClick={this.btnClickBad}>bad</button></li>
               </ul>
               <h3>Statistics</h3>
               <ul className="list">
