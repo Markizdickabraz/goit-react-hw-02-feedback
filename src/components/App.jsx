@@ -10,11 +10,10 @@ class App extends Component{
           bad: 0
       };
       
-  btnClick = (e) => {
-    console.dir(e.target);
-    console.dir(e.currentTarget.name);
+  btnClick = (options) => {
+    console.dir(options)
     this.setState({
-        
+        [options]: options +1  
     })
   }
   
@@ -52,7 +51,7 @@ class App extends Component{
           return (
             <div>
               <Section title="Plese leave feedback"></Section>
-              <FeedbackOptions options={['good' , 'neutral', 'bad']}>
+              <FeedbackOptions options={['good' , 'neutral', 'bad']} onLeaveFeedback={this.btnClick}>
               </FeedbackOptions>
               {/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}></Statistics> */}
             </div>

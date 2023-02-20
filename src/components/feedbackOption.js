@@ -1,11 +1,11 @@
 // import React, {Component} from "react";
 
 // class FeedbackOptions extends Component {
-//     render(){
+//     render({options, onLeaveFeedback}){
 //         return (
 //             <ul>
 //             {options.map(optionItem => {return(
-//             <li key= {optionItem}><button type="button">{optionItem}</button></li>
+//             <li key= {optionItem}><button type="button" onClick={onLeaveFeedback}>{optionItem}</button></li>
 //             )})}</ul>
 //         )
 //     }
@@ -13,15 +13,14 @@
 
 // export default FeedbackOptions;
 
-import App from "./App"
-const app = new App();
 
-export default function FeedbackOptions({options}) {
+export default function FeedbackOptions({options, onLeaveFeedback}) {
     return (
     <ul>
         {options.map(optionItem => {return(
-            <li key = {optionItem}><button type="button" onClick={app.btnClick}>{optionItem} </button></li>
-            )})}</ul>
+            <li key = {optionItem}><button type="button" onClick={onLeaveFeedback} >{optionItem}  </button></li>
+            )})}
+            </ul>
         )
     }
 
