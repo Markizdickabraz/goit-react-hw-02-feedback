@@ -61,7 +61,7 @@ class App extends Component{
             <Section title="Plese leave feedback">
 
               {/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}></Statistics> */}
-              <FeedbackOptions options={['good', 'neutral', 'bad']}></FeedbackOptions>
+              <FeedbackOptions options={[this.state]}></FeedbackOptions>
               {/* <h1>Please leave feedback</h1>
               <ul className="list"> 
                 <li><button type='button' name='good' onClick={this.btnClickGood}>good</button></li>
