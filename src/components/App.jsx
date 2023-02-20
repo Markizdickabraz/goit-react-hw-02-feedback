@@ -1,4 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import Section from "./sectionTitle";
+import FeedbackOptions from "./feedbackOption";
 
 
 class App extends Component{
@@ -9,14 +11,10 @@ class App extends Component{
       };
       
   // btnClick = (e) => {
-  //   if (e.target.nodeName !== 'BUTTON') {
-  //     return
-  //   }
   //   console.dir(e.target);
-  //   this.setState(prevState => {
-  //     return {
+  //   console.dir(e.currentTarget.name);
+  //   this.setState({
         
-  //     }
   //   })
   // }
   
@@ -57,10 +55,14 @@ class App extends Component{
     return positive;
  }
     
-      render() { 
+  render() { 
+        
           return (
-            <div>
-              <h1>Please leave feedback</h1>
+            <Section title="Plese leave feedback">
+
+              {/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}></Statistics> */}
+              <FeedbackOptions options={['good', 'neutral', 'bad']}></FeedbackOptions>
+              {/* <h1>Please leave feedback</h1>
               <ul className="list"> 
                 <li><button type='button' name='good' onClick={this.btnClickGood}>good</button></li>
                 <li><button type='button' name= 'neutral' onClick={this.btnClickNeutral}>neutral</button></li>
@@ -73,8 +75,8 @@ class App extends Component{
                 <li>bad:{this.state.bad}</li>
                 <li>total:{this.countTotalFeedback()}</li>
                 <li>Posiviti feedback:{this.countPositiveFeedbackPercentage()}%</li>
-              </ul>
-            </div>
+              </ul> */}
+            </Section>
 
           )
       }
