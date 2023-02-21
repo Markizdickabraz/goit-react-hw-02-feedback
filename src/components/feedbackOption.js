@@ -1,26 +1,18 @@
-// import React, {Component} from "react";
+import { List, Btn } from './feedbackStyled';
+import PropTypes from 'prop-types';
 
-// class FeedbackOptions extends Component {
-//     render({options, onLeaveFeedback}){
-//         return (
-//             <ul>
-//             {options.map(optionItem => {return(
-//             <li key= {optionItem}><button type="button" onClick={onLeaveFeedback}>{optionItem}</button></li>
-//             )})}</ul>
-//         )
-//     }
-// }
-
-// export default FeedbackOptions;
-
-
-export default function FeedbackOptions({options, onLeaveFeedback}) {
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
-    <ul>
+    <List>
         {options.map(optionItem => {return(
-            <li key = {optionItem}><button type="button" onClick={onLeaveFeedback} >{optionItem}  </button></li>
+            <li key = {optionItem}><Btn type="button" onClick={onLeaveFeedback}>{optionItem}  </Btn></li>
             )})}
-            </ul>
+            </List>
         )
     }
 
+
+FeedbackOptions.prototype = {
+    options: PropTypes.arrayOf(PropTypes.string),
+    onLeaveFeedback: PropTypes.func,
+}
