@@ -7,5 +7,5 @@ export default function Notification({ message }) {
 }
 
 Notification.prototype = {
-    message: PropTypes.string,
+    message: PropTypes.string.isRequired,
 }

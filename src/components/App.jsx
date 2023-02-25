@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Section from "./sectionTitle";
-import FeedbackOptions from "./feedbackOption";
-import Statistics from "./statistics";
+import Section from "./title/sectionTitle";
+import FeedbackOptions from "./feedbackOption/feedbackOption";
+import Statistics from "./statistic/statistics";
 import { GlobalStyle } from "./GlobalStyle";
 
 

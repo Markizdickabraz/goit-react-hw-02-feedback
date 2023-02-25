@@ -1,4 +1,4 @@
-import Notification from "./notification"
+import Notification from "../notification/notification"
 import { Stats } from "./statisticsStyled"
 import PropTypes from 'prop-types';
 
@@ -18,9 +18,9 @@ export default function Statistics({ good, neutral, bad, total, positivePercenta
 }
 
 Statistics.prototype = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
     total: PropTypes.number,
     positivePercentage: PropTypes.number,
 }
