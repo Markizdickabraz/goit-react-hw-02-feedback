@@ -37,10 +37,10 @@ class App extends Component{
       return;
     }
     percentage = this.goodState() / this.countTotalFeedback() * 100;
-    // if (percentage % 2 !== 0) {
-      // percentage.toFixed(2);
+    // if (percentage %2 !== 0) {
+    //   percentage.toFixed(2);
     // }
-    return percentage;
+    return percentage.toFixed(0);
   }
     
   render() { 
